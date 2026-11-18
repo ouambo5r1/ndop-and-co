@@ -1,0 +1,334 @@
+/*
+    Project: SDC260 1.9 Project - Blueprints to Browsers (Ndop & Co. online store)
+    Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+    Date: November 10, 2026 (last updated)
+    Purpose: Brand stylesheet for the Ndop & Co. homepage prototype. It defines the
+             Coolors palette as CSS custom properties and lays out the header, hero,
+             category tiles, product cards, promises bar, and footer.
+             Contrast (WebAIM): #222222 on #FAF6EE = 14.75:1,
+             #FFFFFF on #B5482A = 5.35:1, #FAF6EE on #1B2A4A = 13.19:1.
+*/
+
+/* ===== Brand palette ===== */
+:root {
+    --indigo: #1B2A4A;      /* Space Indigo: header, footer, headings */
+    --cream: #FAF6EE;       /* Floral White: page background */
+    --terracotta: #B5482A;  /* Rusty Spice: buttons and calls to action */
+    --gold: #E0A526;        /* Amber Honey: accents only (never small text on cream) */
+    --charcoal: #222222;    /* Carbon Black: body text */
+    --white: #FFFFFF;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background-color: var(--cream);
+}
+
+h1, h2, h3 {
+    color: var(--indigo);
+    line-height: 1.25;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Visible keyboard focus on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* Hidden visually but still read by screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Skip link appears only when it receives keyboard focus */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    padding: 8px 12px;
+    background-color: var(--gold);
+    color: var(--indigo);
+    z-index: 10;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--terracotta);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #963A21;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background-color: var(--indigo);
+    color: var(--cream);
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-list,
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-underline-offset: 6px;
+}
+
+.search {
+    display: flex;
+    gap: 6px;
+}
+
+.search input {
+    padding: 8px 10px;
+    border: 1px solid var(--cream);
+    border-radius: 6px;
+    min-width: 200px;
+}
+
+.search button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===== Hero ===== */
+.hero {
+    padding: 56px 0;
+    border-bottom: 6px solid var(--gold);
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--terracotta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    margin: 8px 0 16px;
+}
+
+/* Decorative pattern that suggests indigo ndop cloth */
+.hero-art {
+    min-height: 300px;
+    border-radius: 12px;
+    background-color: var(--indigo);
+    background-image:
+        repeating-linear-gradient(45deg, rgba(250, 246, 238, 0.85) 0 6px, transparent 6px 34px),
+        repeating-linear-gradient(-45deg, rgba(250, 246, 238, 0.85) 0 6px, transparent 6px 34px);
+}
+
+/* ===== Categories ===== */
+.categories,
+.featured {
+    padding-top: 40px;
+    padding-bottom: 8px;
+}
+
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tile {
+    display: block;
+    padding: 34px 16px;
+    border: 2px solid var(--indigo);
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--indigo);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.tile:hover {
+    background-color: var(--gold);
+}
+
+/* ===== Product cards ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    padding: 14px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(27, 42, 74, 0.12);
+}
+
+.product-card h3 {
+    font-size: 1.05rem;
+    margin: 12px 0 4px;
+}
+
+.price {
+    margin: 0 0 12px;
+    font-weight: 700;
+}
+
+.product-img {
+    height: 170px;
+    border-radius: 8px;
+}
+
+/* Placeholder product "photos" drawn with CSS until real images are added */
+.img-indigo {
+    background: repeating-linear-gradient(90deg, #1B2A4A 0 18px, #FAF6EE 18px 22px);
+}
+
+.img-tote {
+    background: linear-gradient(180deg, #222222 70%, #B5482A 70% 78%, #E0A526 78% 86%, #222222 86%);
+}
+
+.img-basket {
+    background: repeating-radial-gradient(circle at 50% 60%, #E0A526 0 8px, #C98F1D 8px 14px);
+}
+
+.img-pillow {
+    background: repeating-conic-gradient(#B5482A 0 25%, #E0A526 0 50%) 0 0 / 40px 40px;
+}
+
+/* ===== Promises bar ===== */
+.promises {
+    margin-top: 40px;
+    padding: 18px 0;
+    background-color: var(--gold);
+    color: var(--indigo);
+}
+
+.promise-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 12px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    padding: 28px 0;
+    background-color: var(--indigo);
+    color: var(--cream);
+    text-align: center;
+}
+
+.footer-links {
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.site-footer a {
+    color: var(--cream);
+}
+
+/* ===== Small screens: stack the layout ===== */
+@media (max-width: 800px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .tile-grid,
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-art {
+        display: none;
+    }
+}

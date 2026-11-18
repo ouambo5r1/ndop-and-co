@@ -2,41 +2,35 @@
 <html lang="en">
 <head>
     <!--
-        Project: SDC260 1.9 Project - Blueprints to Browsers (Ndop & Co. online store)
+        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
         Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
-        Date: November 10, 2026 (initial commit / last updated)
-        Purpose: Initial store homepage for Ndop & Co., an online shop for handmade,
-                 Cameroonian-inspired textiles and home goods. This first version is a
-                 static, semantic HTML5 prototype of the homepage layout described in
-                 the project proposal. Later weeks add the catalog, cart, and checkout.
+        Date: November 15, 2026 (last updated)
+        Purpose: Store homepage for Ndop &amp; Co. This Week 2 version keeps the semantic homepage layout from the proposal and uses the shared brand stylesheet, real product images, and a responsive header with a mobile menu.
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ndop & Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
     <title>Ndop &amp; Co. | Handmade Textiles &amp; Home Goods</title>
-    <!-- External stylesheet with the brand palette and layout -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <!-- Skip link lets keyboard users jump past the navigation -->
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- ===== SITE HEADER: logo, main navigation, search, cart ===== -->
     <header class="site-header">
         <div class="container header-inner">
             <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
 
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="menu-button">Menu</label>
             <nav aria-label="Main">
                 <ul class="nav-list">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">Meet the Artisans</a></li>
-                    <li><a href="cart.html">Cart (0)</a></li>
+                        <li><a href="index.html" aria-current="page">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="cart.html">Cart (0)</a></li>
                 </ul>
             </nav>
 
-            <!-- Product search (connected to the catalog in Week 3) -->
             <form class="search" action="shop.html" method="get" role="search">
                 <label for="q" class="visually-hidden">Search products</label>
                 <input type="search" id="q" name="q" placeholder="Search products">
@@ -44,11 +38,8 @@
             </form>
         </div>
     </header>
-
-    <!-- ===== MAIN CONTENT ===== -->
     <main id="main">
 
-        <!-- Hero banner with the primary call to action -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-inner">
                 <div class="hero-text">
@@ -61,54 +52,46 @@
             </div>
         </section>
 
-        <!-- Shop-by-category tiles (each links to a filtered catalog page) -->
         <section class="container categories" aria-labelledby="cat-title">
             <h2 id="cat-title">Shop by Category</h2>
             <ul class="tile-grid">
-                <li><a class="tile" href="shop.html?category=home-textiles">Home Textiles</a></li>
-                <li><a class="tile" href="shop.html?category=bags">Bags &amp; Totes</a></li>
-                <li><a class="tile" href="shop.html?category=baskets">Woven Baskets</a></li>
-                <li><a class="tile" href="shop.html?category=apparel">Apparel</a></li>
+                <li><a class="tile" href="shop.html#home-textiles">Home Textiles</a></li>
+                <li><a class="tile" href="shop.html#bags">Bags &amp; Totes</a></li>
+                <li><a class="tile" href="shop.html#baskets">Woven Baskets</a></li>
+                <li><a class="tile" href="shop.html#apparel">Apparel</a></li>
             </ul>
         </section>
 
-        <!-- Featured products: sample data from the product data model -->
         <section class="container featured" aria-labelledby="feat-title">
             <h2 id="feat-title">Featured Products</h2>
             <div class="product-grid">
-
                 <article class="product-card">
-                    <div class="product-img img-indigo" role="img" aria-label="Indigo table runner with white geometric pattern"></div>
+                    <img src="images/ndp-1001.jpg" alt="Indigo table runner with white geometric pattern">
                     <h3>Ndop Indigo Table Runner</h3>
                     <p class="price">$48.00</p>
-                    <a class="btn btn-primary" href="product.html?id=NDP-1001">View Details</a>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
                 </article>
-
                 <article class="product-card">
-                    <div class="product-img img-tote" role="img" aria-label="Black canvas tote with colorful embroidered border"></div>
+                    <img src="images/ndp-2003.jpg" alt="Black canvas tote with a colorful embroidered border">
                     <h3>Toghu-Inspired Embroidered Tote</h3>
-                    <p class="price">$36.00</p>
-                    <a class="btn btn-primary" href="product.html?id=NDP-2003">View Details</a>
+                    <p class="price"><del>$36.00</del> <span class="sale">$32.00</span></p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
                 </article>
-
                 <article class="product-card">
-                    <div class="product-img img-basket" role="img" aria-label="Round woven raffia basket with lid"></div>
+                    <img src="images/ndp-3002.jpg" alt="Round woven raffia basket with a lid">
                     <h3>Raffia Storage Basket</h3>
                     <p class="price">$29.00</p>
-                    <a class="btn btn-primary" href="product.html?id=NDP-3002">View Details</a>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
                 </article>
-
                 <article class="product-card">
-                    <div class="product-img img-pillow" role="img" aria-label="Square throw pillow in terracotta and gold print"></div>
+                    <img src="images/ndp-1004.jpg" alt="Square throw pillow cover in a terracotta and gold print">
                     <h3>Terracotta Print Pillow Cover</h3>
                     <p class="price">$32.00</p>
-                    <a class="btn btn-primary" href="product.html?id=NDP-1004">View Details</a>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
                 </article>
-
             </div>
         </section>
 
-        <!-- Store promises that build trust before checkout -->
         <section class="promises" aria-label="Store promises">
             <ul class="container promise-list">
                 <li><strong>Handmade</strong> by partner artisans</li>
@@ -119,7 +102,6 @@
 
     </main>
 
-    <!-- ===== SITE FOOTER ===== -->
     <footer class="site-footer">
         <div class="container">
             <nav aria-label="Footer">

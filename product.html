@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 15, 2026 (last updated)
+        Purpose: Product Detail page for the Ndop Indigo Table Runner (product NDP-1001). The layout places the product photo beside the name, price, description, and an Add to Cart form, then lists related products.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Ndop Indigo Table Runner | Ndop &amp; Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html" aria-current="page">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="cart.html">Cart (0)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <div class="container page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="shop.html#home-textiles">Home Textiles</a></li>
+                    <li aria-current="page">Ndop Indigo Table Runner</li>
+                </ol>
+            </nav>
+        </div>
+
+        <article class="container product-layout">
+            <div class="product-photo">
+                <img src="images/ndp-1001.jpg" alt="Indigo table runner with a white geometric ndop pattern">
+            </div>
+            <div class="product-info">
+                <p class="eyebrow">Home Textiles</p>
+                <h1>Ndop Indigo Table Runner</h1>
+                <p class="price">$48.00</p>
+                <p>Hand-dyed indigo cotton runner with a white geometric ndop pattern. Each piece is made in a small batch, so the resist-dye marks vary slightly from runner to runner.</p>
+                <ul class="product-meta">
+                    <li><strong>Product ID:</strong> NDP-1001</li>
+                    <li><strong>Details:</strong> 100% cotton; 14 x 72 in</li>
+                    <li><strong>Weight:</strong> 12 oz</li>
+                    <li><strong>Availability:</strong> In stock (25)</li>
+                </ul>
+                <form class="add-form" action="cart.html" method="get">
+                    <div>
+                        <label for="qty">Quantity</label>
+                        <input type="number" id="qty" name="qty" min="1" max="25" value="1">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Add to Cart</button>
+                </form>
+                <p class="note">The cart is a static preview in this milestone. Quantity changes and live totals are planned for Week 4.</p>
+            </div>
+        </article>
+
+        <section class="container featured" aria-labelledby="related-title">
+            <h2 id="related-title">You may also like</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/ndp-1004.jpg" alt="Square throw pillow cover in a terracotta and gold print">
+                    <h3>Terracotta Print Pillow Cover</h3>
+                    <p class="price">$32.00</p>
+                    <a class="btn btn-primary" href="shop.html#home-textiles">View in Shop</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-1005.jpg" alt="Navy throw blanket with a repeating diamond pattern">
+                    <h3>Indigo Geometric Throw</h3>
+                    <p class="price">$72.00</p>
+                    <a class="btn btn-primary" href="shop.html#home-textiles">View in Shop</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-2003.jpg" alt="Black canvas tote with a colorful embroidered border">
+                    <h3>Toghu-Inspired Embroidered Tote</h3>
+                    <p class="price"><del>$36.00</del> <span class="sale">$32.00</span></p>
+                    <a class="btn btn-primary" href="shop.html#bags">View in Shop</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+</body>
+</html>

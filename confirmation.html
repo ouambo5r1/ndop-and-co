@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 15, 2026 (last updated)
+        Purpose: Order Confirmation page for Ndop &amp; Co. It thanks the shopper, shows a sample order number, and repeats the order summary. Real order numbers will be generated in Week 5.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Order Confirmation | Ndop &amp; Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="cart.html">Cart (2)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <div class="container page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Order confirmation</li>
+                </ol>
+            </nav>
+        </div>
+        <section class="container confirm-box" aria-labelledby="thanks-title">
+            <h1 id="thanks-title">Thank you for the sample order</h1>
+            <p>The checkout form on the previous page is a static prototype, so no payment was taken and no package will ship. In the finished store, this page will confirm a real order.</p>
+            <p class="order-number">Sample order number: NDP-2026-11015</p>
+            <h2>Items in this sample order</h2>
+            <ul>
+                <li>Ndop Indigo Table Runner x 1 — $48.00</li>
+                <li>Toghu-Inspired Embroidered Tote x 1 — $32.00</li>
+            </ul>
+            <p><strong>Shipping:</strong> Free</p>
+            <p><strong>Estimated tax:</strong> $4.80</p>
+            <p><strong>Total:</strong> $84.80</p>
+            <p><a class="btn btn-primary" href="shop.html">Return to the Shop</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+</body>
+</html>

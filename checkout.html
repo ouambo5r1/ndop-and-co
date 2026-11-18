@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 15, 2026 (last updated)
+        Purpose: Checkout page for Ndop &amp; Co. The form collects contact, shipping, and payment details with a visible label on every control. This is a static prototype; validation and order processing are planned for Week 5.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Checkout | Ndop &amp; Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="cart.html">Cart (2)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <header class="container page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li aria-current="page">Checkout</li>
+                </ol>
+            </nav>
+            <h1>Checkout</h1>
+            <p>Enter contact, shipping, and payment details to place a sample order. No payment is processed on this student project page.</p>
+        </header>
+
+        <div class="container checkout-layout">
+            <form class="checkout-form" action="confirmation.html" method="get">
+                <fieldset>
+                    <legend>Contact information</legend>
+                    <div class="field">
+                        <label for="full-name">Full name</label>
+                        <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+                    </div>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Shipping address</legend>
+                    <div class="field">
+                        <label for="street">Street address</label>
+                        <input type="text" id="street" name="street" autocomplete="address-line1" required>
+                    </div>
+                    <div class="field">
+                        <label for="apt">Apartment or suite (optional)</label>
+                        <input type="text" id="apt" name="apt" autocomplete="address-line2">
+                    </div>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" autocomplete="address-level2" required>
+                        </div>
+                        <div class="field">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" autocomplete="address-level1" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="zip">ZIP code</label>
+                        <input type="text" id="zip" name="zip" autocomplete="postal-code" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Payment</legend>
+                    <div class="field">
+                        <label for="card-name">Name on card</label>
+                        <input type="text" id="card-name" name="card-name" autocomplete="cc-name" required>
+                    </div>
+                    <div class="field">
+                        <label for="card-number">Card number</label>
+                        <input type="text" id="card-number" name="card-number" inputmode="numeric" autocomplete="cc-number" required>
+                    </div>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="exp">Expiration date</label>
+                            <input type="text" id="exp" name="exp" placeholder="MM/YY" autocomplete="cc-exp" required>
+                        </div>
+                        <div class="field">
+                            <label for="cvc">Security code</label>
+                            <input type="text" id="cvc" name="cvc" inputmode="numeric" autocomplete="cc-csc" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button class="btn btn-primary" type="submit">Place sample order</button>
+            </form>
+
+            <aside class="order-summary" aria-labelledby="summary-title">
+                <h2 id="summary-title">Order summary</h2>
+                <p>Ndop Indigo Table Runner x 1 <span>$48.00</span></p>
+                <p>Toghu-Inspired Embroidered Tote x 1 <span>$32.00</span></p>
+                <p>Shipping <span>Free</span></p>
+                <p>Estimated tax <span>$4.80</span></p>
+                <p class="price">Total $84.80</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+</body>
+</html>

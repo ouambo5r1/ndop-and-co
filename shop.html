@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 15, 2026 (last updated)
+        Purpose: Shop catalog page for Ndop &amp; Co. Products are grouped by category in a responsive CSS Grid. Each card uses a real product image, a name, a price, and a link to the Product Detail page.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Shop the Collection | Ndop &amp; Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html" aria-current="page">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="cart.html">Cart (0)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <header class="container page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Shop</li>
+                </ol>
+            </nav>
+            <h1>Shop the Collection</h1>
+            <p>Browse handmade textiles, bags, baskets, and apparel. Use the category links to jump to a group, or open any product to read the full details.</p>
+            <ul class="tile-grid">
+                <li><a class="tile" href="#home-textiles">Home Textiles</a></li>
+                <li><a class="tile" href="#bags">Bags &amp; Totes</a></li>
+                <li><a class="tile" href="#baskets">Woven Baskets</a></li>
+                <li><a class="tile" href="#apparel">Apparel</a></li>
+            </ul>
+        </header>
+
+        <section class="container page-section" id="home-textiles" aria-labelledby="home-textiles-title">
+            <h2 id="home-textiles-title">Home Textiles</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/ndp-1001.jpg" alt="Indigo table runner with white geometric pattern">
+                    <p class="category-label">Home Textiles</p>
+                    <h3>Ndop Indigo Table Runner</h3>
+                    <p class="price">$48.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-1004.jpg" alt="Square throw pillow cover in a terracotta and gold print">
+                    <p class="category-label">Home Textiles</p>
+                    <h3>Terracotta Print Pillow Cover</h3>
+                    <p class="price">$32.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-1005.jpg" alt="Navy throw blanket with a repeating diamond pattern">
+                    <p class="category-label">Home Textiles</p>
+                    <h3>Indigo Geometric Throw</h3>
+                    <p class="price">$72.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="container page-section" id="bags" aria-labelledby="bags-title">
+            <h2 id="bags-title">Bags &amp; Totes</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/ndp-2003.jpg" alt="Black canvas tote with a colorful embroidered border">
+                    <p class="category-label">Bags &amp; Totes</p>
+                    <h3>Toghu-Inspired Embroidered Tote</h3>
+                    <p class="price"><del>$36.00</del> <span class="sale">$32.00</span></p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-2004.jpg" alt="Terracotta crossbody bag with a gold stripe and dark strap">
+                    <p class="category-label">Bags &amp; Totes</p>
+                    <h3>Market Day Crossbody</h3>
+                    <p class="price">$28.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="container page-section" id="baskets" aria-labelledby="baskets-title">
+            <h2 id="baskets-title">Woven Baskets</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/ndp-3002.jpg" alt="Round woven raffia basket with a lid">
+                    <p class="category-label">Woven Baskets</p>
+                    <h3>Raffia Storage Basket</h3>
+                    <p class="price">$29.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-3005.jpg" alt="Set of three nested raffia bowls in decreasing sizes">
+                    <p class="category-label">Woven Baskets</p>
+                    <h3>Nested Raffia Bowl Set</h3>
+                    <p class="price">$42.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="container page-section" id="apparel" aria-labelledby="apparel-title">
+            <h2 id="apparel-title">Apparel</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/ndp-4001.jpg" alt="Folded indigo head wrap with a gold band">
+                    <p class="category-label">Apparel</p>
+                    <h3>Indigo Head Wrap</h3>
+                    <p class="price">$24.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+                <article class="product-card">
+                    <img src="images/ndp-4002.jpg" alt="Draped sun-dyed cotton scarf in gold and terracotta bands">
+                    <p class="category-label">Apparel</p>
+                    <h3>Sun-Dyed Cotton Scarf</h3>
+                    <p class="price">$22.00</p>
+                    <a class="btn btn-primary" href="product.html">View Details</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+</body>
+</html>

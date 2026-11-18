@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 15, 2026 (last updated)
+        Purpose: Shopping cart page for Ndop &amp; Co. This static Week 2 version shows two sample line items, quantities, and order totals, with a link to Checkout. Live cart logic is planned for Week 4.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Your Cart | Ndop &amp; Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="cart.html" aria-current="page">Cart (2)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <header class="container page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Cart</li>
+                </ol>
+            </nav>
+            <h1>Your Cart</h1>
+            <p>Two sample items are shown so the cart layout can be designed now. Adding, removing, and recalculating totals with JavaScript is planned for Week 4.</p>
+        </header>
+
+        <div class="container">
+            <table class="cart-table">
+                <caption class="visually-hidden">Items in the cart</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Line total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-item">
+                                <img src="images/ndp-1001.jpg" alt="">
+                                <div>
+                                    <a href="product.html"><strong>Ndop Indigo Table Runner</strong></a>
+                                    <p>NDP-1001</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$48.00</td>
+                        <td>1</td>
+                        <td>$48.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-item">
+                                <img src="images/ndp-2003.jpg" alt="">
+                                <div>
+                                    <a href="shop.html#bags"><strong>Toghu-Inspired Embroidered Tote</strong></a>
+                                    <p>NDP-2003 (sale)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$32.00</td>
+                        <td>1</td>
+                        <td>$32.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="totals">
+                <p><span>Subtotal</span> <span>$80.00</span></p>
+                <p><span>Shipping</span> <span>Free (order over $75)</span></p>
+                <p><span>Estimated tax</span> <span>$4.80</span></p>
+                <p class="grand"><span>Total</span> <span>$84.80</span></p>
+            </div>
+
+            <p class="cart-actions">
+                <a class="btn btn-secondary" href="shop.html">Continue Shopping</a>
+                <a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+</body>
+</html>

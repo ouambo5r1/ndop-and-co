@@ -4,7 +4,7 @@
 **Course:** SDC260 Web Development I – HTML, CSS, JS (ECPI University, term 202611E)  
 **Instructor:** Bethany Gottschall  
 **Started:** November 10, 2026  
-**Last updated:** November 17, 2026 (Week 2: Style & Substance)
+**Last updated:** November 24, 2026 (Week 3: Make It Click)
 
 **Repository:** https://github.com/ouambo5r1/ndop-and-co  
 **Live site (GitHub Pages):** https://ouambo5r1.github.io/ndop-and-co/
@@ -26,6 +26,7 @@ Store Homepage (index.html)
 ├── Shop / Catalog (shop.html) ── Product Detail (product.html)
 │                                      └── Cart (cart.html)
 ├── Meet the Artisans / About (about.html)
+├── Contact (contact.html)
 └── Cart (cart.html) ── Checkout (checkout.html) ── Order Confirmation (confirmation.html)
 ```
 
@@ -47,8 +48,8 @@ WebAIM Contrast Checker: `#222222` on `#FAF6EE` = 14.75:1, `#FFFFFF` on `#B5482A
 | Week (due date) | Milestone | Status |
 |---|---|---|
 | Week 1 (Nov 15, 2026) | Planning and repository; homepage prototype | Complete |
-| Week 2 (Nov 22, 2026) | Static pages and responsive layout | Complete (this milestone) |
-| Week 3 (Nov 29, 2026) | Product data and catalog with JavaScript | Not started |
+| Week 2 (Nov 22, 2026) | Static pages and responsive layout | Complete |
+| Week 3 (Nov 29, 2026) | Product data and catalog with JavaScript; contact, shipping, and payment forms with validation; coupon codes | Complete (this milestone) |
 | Week 4 (Dec 6, 2026) | Shopping cart | Not started |
 | Week 5 (Dec 13, 2026) | Checkout, testing, and launch | Not started |
 
@@ -61,9 +62,27 @@ WebAIM Contrast Checker: `#222222` on `#FAF6EE` = 14.75:1, `#FFFFFF` on `#B5482A
 - `cart.html` – Shopping cart layout (static sample items)
 - `checkout.html` – Checkout form with labeled fields
 - `confirmation.html` – Order Confirmation
+- `contact.html` – Contact form (Week 3)
+- `js/products.js` – Product data array (12 products) that follows the proposal data model
+- `js/shop.js` – Builds product cards with a loop; search, category filter, and Shop coupon box
+- `js/product.js` – Fills the Product Detail page from `?id=`
+- `js/coupons.js` – Coupon codes and the percentage discount function
+- `js/validation.js` – Validation functions for the contact, shipping, and purchase forms
+- `js/checkout.js` – Checkout order summary, coupon, totals, and form submission
 - `css/styles.css` – Brand palette, shared layout, Flexbox/Grid, and media queries
 - `images/` – Product images used on the catalog, detail, and cart pages
 - `README.md` – this file
 
 This public repository holds the Ndop & Co. website. Course copies of the same
-files are also stored in the private school repository under `sdc260-week2/2.6_NdopAndCo/`.
+files are also stored in the private school repository under `sdc260-week2/2.6_NdopAndCo/` and `sdc260-week3/3.6_NdopAndCo/`.
+
+## Coupon codes (Week 3)
+
+| Code | Discount |
+|---|---|
+| `NDOP10` | 10% off the whole order |
+| `TEXTILE20` | 20% off Home Textiles |
+| `BASKET15` | 15% off Woven Baskets |
+
+The checkout page is a class project. Use the test card number 4242 4242 4242 4242 with any future
+expiration date; no payment is processed.

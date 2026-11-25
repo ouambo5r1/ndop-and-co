@@ -370,8 +370,11 @@ summary:focus-visible {
 }
 
 /* ===== Page titles, breadcrumbs, and intro copy ===== */
+/* Only top and bottom padding, so the .container side padding still applies
+   (Week 5 fix: the shorthand removed the 20px side padding on small screens) */
 .page-hero {
-    padding: 32px 0 8px;
+    padding-top: 32px;
+    padding-bottom: 8px;
 }
 
 .breadcrumb {

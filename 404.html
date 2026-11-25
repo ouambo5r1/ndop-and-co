@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 5.5 Project - Grand Opening (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 24, 2026 (last updated)
+        Purpose: Custom Page Not Found page for Ndop &amp; Co. GitHub Pages shows it for any address that does not exist, so visitors get links back to the store instead of a generic error.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Page Not Found | Ndop &amp; Co.</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the main menu">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Cart (0)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <section class="container page-hero not-found">
+            <h1>Page Not Found</h1>
+            <p>Sorry, we could not find that page. It may have moved, or the address may be misspelled.</p>
+            <p class="not-found-links">
+                <a class="btn btn-primary" href="index.html">Back to the Homepage</a>
+                <a class="btn btn-secondary" href="shop.html">Browse the Shop</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="network.html">Network Test</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

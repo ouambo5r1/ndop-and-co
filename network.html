@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Project: SDC260 5.5 Project - Grand Opening (Ndop & Co. online store)
+        Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
+        Date: November 24, 2026 (last updated)
+        Purpose: Network Connection Test page for Ndop &amp; Co. It reads the page address to show the Local Host Name, Current Communication Port, Current Transmission Protocol, and Last Time Launched (saved in a cookie), and it tells the visitor whether the site is running on a local development server, on the public web, or as a plain file.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndop &amp; Co. - handmade, Cameroonian-inspired textiles and home goods.">
+    <title>Network Connection Test | Ndop &amp; Co.</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Ndop and Co. home">Ndop <span>&amp;</span> Co.</a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the main menu">
+            <label for="nav-toggle" class="menu-button">Menu</label>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Meet the Artisans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Cart (0)</a></li>
+                </ul>
+            </nav>
+
+            <form class="search" action="shop.html" method="get" role="search">
+                <label for="q" class="visually-hidden">Search products</label>
+                <input type="search" id="q" name="q" placeholder="Search products">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main id="main">
+        <header class="container page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Network Connection Test</li>
+                </ol>
+            </nav>
+            <h1>Network Connection Test</h1>
+            <p>This page checks how the Ndop &amp; Co. site is being served. It reads the page address in your browser, so nothing is sent to a server.</p>
+        </header>
+
+        <div class="container network-layout">
+            <!-- Result banner: filled in by js/network.js -->
+            <section id="network-banner" class="network-banner" aria-live="polite">
+                <h2 id="network-title">Running network test...</h2>
+                <p id="network-message">If this message stays, JavaScript is turned off.</p>
+            </section>
+
+            <!-- Telemetry results -->
+            <section class="network-card" aria-labelledby="results-heading">
+                <h2 id="results-heading">Connection Details</h2>
+                <dl class="network-results">
+                    <div>
+                        <dt>Local Host Name</dt>
+                        <dd id="host-name">Detecting...</dd>
+                    </div>
+                    <div>
+                        <dt>Current Communication Port</dt>
+                        <dd id="port-number">Detecting...</dd>
+                    </div>
+                    <div>
+                        <dt>Current Transmission Protocol</dt>
+                        <dd id="protocol-name">Detecting...</dd>
+                    </div>
+                    <div>
+                        <dt>Last Time Launched</dt>
+                        <dd id="last-launch">Detecting...</dd>
+                    </div>
+                    <div>
+                        <dt>This Launch</dt>
+                        <dd id="this-launch">Detecting...</dd>
+                    </div>
+                    <div>
+                        <dt>Browser Connection</dt>
+                        <dd id="browser-online">Detecting...</dd>
+                    </div>
+                </dl>
+                <div class="network-actions">
+                    <button type="button" id="rerun-test" class="btn btn-primary">Run Test Again</button>
+                    <button type="button" id="clear-launch" class="link-btn">Clear launch history</button>
+                </div>
+            </section>
+
+            <!-- How to run the site locally -->
+            <aside class="network-card" aria-labelledby="howto-heading">
+                <h2 id="howto-heading">Run the Site Locally</h2>
+                <ol>
+                    <li>Open the project folder in Visual Studio Code.</li>
+                    <li>Install the Live Preview extension from Microsoft.</li>
+                    <li>Open <code>network.html</code> and select Show Preview.</li>
+                    <li>The page opens at <code>http://127.0.0.1:3000/network.html</code> and reports &quot;Local network recognized.&quot;</li>
+                </ol>
+                <p>The public copy of the store runs on GitHub Pages over HTTPS, so this page reports &quot;Live on the public web&quot; there.</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Footer">
+                <ul class="footer-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">Meet the Artisans</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="network.html">Network Test</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 Ndop &amp; Co. | Created by Rodrigue Sifor OUAMBO V MBOLIYOU (OU26049981) for SDC260</p>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/network.js"></script>
+</body>
+</html>

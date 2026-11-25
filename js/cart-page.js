@@ -1,5 +1,5 @@
 /*
-    Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
+    Project: SDC260 5.5 Project - Grand Opening (Ndop & Co. online store)
     Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
     Date: November 24, 2026 (last updated)
     Purpose: Cart page. Builds the cart table from the saved cart (js/cart.js),

@@ -1,5 +1,5 @@
 /*
-    Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
+    Project: SDC260 5.5 Project - Grand Opening (Ndop & Co. online store)
     Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
     Date: November 24, 2026 (last updated)
     Purpose: Shared brand stylesheet for every Ndop & Co. page. It defines the Coolors
@@ -1020,4 +1020,116 @@ summary:focus-visible {
 
 .add-form.sold-out input {
     background-color: #eeeeee;
+}
+
+/* =========================================
+   Week 5: Grand Opening
+   ========================================= */
+
+/* Network Connection Test page */
+.network-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 40px;
+}
+
+.network-banner {
+    border-left: 8px solid var(--indigo);
+    border-radius: 8px;
+    padding: 18px 24px;
+    background-color: var(--white);
+}
+
+.network-banner h2 {
+    margin-top: 0;
+}
+
+.network-banner.is-local {
+    border-left-color: #2E7D32;
+    background-color: #EAF5EA;
+}
+
+.network-banner.is-public {
+    border-left-color: var(--indigo);
+    background-color: #E9EDF5;
+}
+
+.network-banner.is-file {
+    border-left-color: var(--terracotta);
+    background-color: #FBEDE8;
+}
+
+.network-card {
+    background-color: var(--white);
+    border: 1px solid #E2D9C8;
+    border-radius: 8px;
+    padding: 20px 24px;
+}
+
+.network-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 0;
+}
+
+.network-results div {
+    border: 1px solid #E2D9C8;
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+
+.network-results dt {
+    font-weight: 700;
+    color: var(--indigo);
+}
+
+.network-results dd {
+    margin: 4px 0 0;
+    overflow-wrap: anywhere;
+}
+
+.network-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+code {
+    background-color: #F1ECE2;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+/* Page Not Found */
+.not-found {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.not-found-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Accessibility review: the menu checkbox is only used on small screens,
+   so it is removed from the tab order on wide screens */
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle:focus-visible + .menu-button {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+    }
 }

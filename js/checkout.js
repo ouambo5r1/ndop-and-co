@@ -1,12 +1,13 @@
 /*
-    Project: SDC260 3.6 Project - Make It Click (Ndop & Co. online store)
+    Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
     Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
     Date: November 24, 2026 (last updated)
     Purpose: Checkout page logic. Builds the order summary from product data,
              applies coupon codes with the discount function, recalculates the
              subtotal, discount, shipping, tax, and total, and validates the
              Shipping and Purchase forms before the order is placed.
-             (The live cart arrives in Week 4, so this milestone uses a sample order.)
+             Week 4: the order now comes from the saved cart (js/cart.js). A placed
+             order is saved for the confirmation page and the cart is emptied.
 */
 
 /* ===== Order settings ===== */
@@ -14,11 +15,8 @@ const TAX_RATE = 0.06;              // 6% sales tax estimate
 const FREE_SHIPPING_MIN = 75;       // free shipping at $75 or more
 const SHIPPING_FEE = 6.95;
 
-// Sample order for this milestone (same two products as my proposal)
-const orderItems = [
-    { productId: "NDP-1001", quantity: 1 },
-    { productId: "NDP-2003", quantity: 1 }
-];
+// The order is whatever is in the saved cart
+const orderItems = cart;
 
 let appliedCoupon = null;
 
@@ -60,6 +58,10 @@ function calculateTotals() {
 /* ===== Show the order summary ===== */
 function renderSummary() {
     summaryLines.innerHTML = "";
+
+    if (orderItems.length === 0) {
+        summaryLines.innerHTML = `<p>Your cart is empty. <a href="shop.html">Visit the Shop</a></p>`;
+    }
 
     orderItems.forEach(item => {
         const product = findProduct(item.productId);
@@ -137,8 +139,41 @@ purchaseForm.addEventListener("submit", event => {
         document.querySelector("#shipping-form .invalid").focus();
     }
 
+    if (orderItems.length === 0) {
+        checkoutStatus.textContent = "Your cart is empty. Add items in the Shop before placing an order.";
+        checkoutStatus.className = "form-message error";
+        return;
+    }
+
     if (shippingOK && purchaseOK) {
-        checkoutStatus.textContent = `Order placed! Total charged (sample): ${money(calculateTotals().total)}. Redirecting to your confirmation...`;
+        const totals = calculateTotals();
+        const now = new Date();
+        // Save only what the confirmation page needs (never the card details)
+        const order = {
+            orderNumber: `NDP-${now.getFullYear()}-${String(now.getTime()).slice(-6)}`,
+            placedAt: now.toISOString(),
+            items: orderItems.map(item => {
+                const product = findProduct(item.productId);
+                return {
+                    productId: item.productId,
+                    name: product.name,
+                    quantity: item.quantity,
+                    lineTotal: discountedPrice(product, appliedCoupon) * item.quantity
+                };
+            }),
+            coupon: appliedCoupon ? appliedCoupon.code : null,
+            subtotal: totals.subtotal,
+            discount: totals.discount,
+            shipping: totals.shipping,
+            tax: totals.tax,
+            total: totals.total,
+            shipName: document.getElementById("ship-name").value.trim(),
+            shipCity: document.getElementById("ship-city").value.trim(),
+            shipState: document.getElementById("ship-state").value.trim().toUpperCase()
+        };
+        completeOrder(order);
+        updateCartBadge(false);
+        checkoutStatus.textContent = `Order ${order.orderNumber} placed! Total: ${money(totals.total)}. Redirecting to your confirmation...`;
         checkoutStatus.className = "form-message success";
         setTimeout(() => { window.location.href = "confirmation.html"; }, 1500);
     } else {

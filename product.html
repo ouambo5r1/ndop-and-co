@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!--
-        Project: SDC260 3.6 Project - Make It Click (Ndop & Co. online store)
+        Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
         Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
         Date: November 24, 2026 (last updated)
         Purpose: Product Detail page for Ndop &amp; Co. One HTML template now serves every product: js/product.js reads ?id= from the address bar and fills in the details from js/products.js.
@@ -66,14 +66,14 @@
                     <li><strong>Weight:</strong> <span id="detail-weight">12 oz</span></li>
                     <li><strong>Availability:</strong> <span id="detail-stock">In stock (25)</span></li>
                 </ul>
-                <form class="add-form" action="cart.html" method="get">
+                <form class="add-form">
                     <div>
                         <label for="qty">Quantity</label>
                         <input type="number" id="qty" name="qty" min="1" max="25" value="1">
                     </div>
                     <button class="btn btn-primary" type="submit">Add to Cart</button>
                 </form>
-                <p class="note">The cart is a static preview in this milestone. Quantity changes and live totals are planned for Week 4.</p>
+                <p class="note">Items in your cart are held for you, so the available count goes down as you add them.</p>
             </div>
         </article>
 
@@ -99,6 +99,7 @@
     </footer>
 
     <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/product.js"></script>
 </body>
 </html>

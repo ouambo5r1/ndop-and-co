@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <!--
-        Project: SDC260 2.6 Project - Style & Substance (Ndop & Co. online store)
+        Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
         Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
-        Date: November 15, 2026 (last updated)
-        Purpose: Shopping cart page for Ndop &amp; Co. This static Week 2 version shows two sample line items, quantities, and order totals, with a link to Checkout. Live cart logic is planned for Week 4.
+        Date: November 24, 2026 (last updated)
+        Purpose: Shopping cart page for Ndop &amp; Co. Week 4: the cart is built from the cart saved in localStorage, with quantity buttons, Remove, Clear Cart, live totals, and a button to Checkout.
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">Meet the Artisans</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cart.html" aria-current="page">Cart (2)</a></li>
+                        <li><a href="cart.html" aria-current="page">Cart (0)</a></li>
                 </ul>
             </nav>
 
@@ -48,11 +48,16 @@
                 </ol>
             </nav>
             <h1>Your Cart</h1>
-            <p>Two sample items are shown so the cart layout can be designed now. Adding, removing, and recalculating totals with JavaScript is planned for Week 4.</p>
+            <p id="cart-intro">Loading your cart...</p>
         </header>
 
         <div class="container">
-            <table class="cart-table">
+            <div id="cart-empty" class="empty-state" hidden>
+                <p>Your cart is empty. Browse the Shop to add handmade textiles, bags, baskets, and apparel.</p>
+                <p><a class="btn btn-primary" href="shop.html">Go to the Shop</a></p>
+            </div>
+
+            <table class="cart-table" id="cart-table">
                 <caption class="visually-hidden">Items in the cart</caption>
                 <thead>
                     <tr>
@@ -60,50 +65,24 @@
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Line total</th>
+                        <th scope="col"><span class="visually-hidden">Remove</span></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="cart-item">
-                                <img src="images/ndp-1001.jpg" alt="">
-                                <div>
-                                    <a href="product.html"><strong>Ndop Indigo Table Runner</strong></a>
-                                    <p>NDP-1001</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>$48.00</td>
-                        <td>1</td>
-                        <td>$48.00</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="cart-item">
-                                <img src="images/ndp-2003.jpg" alt="">
-                                <div>
-                                    <a href="shop.html#bags"><strong>Toghu-Inspired Embroidered Tote</strong></a>
-                                    <p>NDP-2003 (sale)</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>$32.00</td>
-                        <td>1</td>
-                        <td>$32.00</td>
-                    </tr>
-                </tbody>
+                <tbody id="cart-body"></tbody>
             </table>
 
-            <div class="totals">
-                <p><span>Subtotal</span> <span>$80.00</span></p>
-                <p><span>Shipping</span> <span>Free (order over $75)</span></p>
-                <p><span>Estimated tax</span> <span>$4.80</span></p>
-                <p class="grand"><span>Total</span> <span>$84.80</span></p>
+            <div class="totals" id="cart-totals">
+                <p><span>Subtotal</span> <span id="cart-subtotal">$0.00</span></p>
+                <p><span>Shipping</span> <span id="cart-shipping">Free</span></p>
+                <p><span>Estimated tax (6%)</span> <span id="cart-tax">$0.00</span></p>
+                <p class="grand"><span>Total</span> <span id="cart-total">$0.00</span></p>
+                <p class="note" id="shipping-hint"></p>
             </div>
 
             <p class="cart-actions">
                 <a class="btn btn-secondary" href="shop.html">Continue Shopping</a>
-                <a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a>
+                <button type="button" class="btn btn-secondary" id="clear-cart">Clear Cart</button>
+                <a class="btn btn-primary" id="checkout-link" href="checkout.html">Proceed to Checkout</a>
             </p>
         </div>
     </main>
@@ -123,5 +102,8 @@
         </div>
     </footer>
 
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
 </body>
 </html>

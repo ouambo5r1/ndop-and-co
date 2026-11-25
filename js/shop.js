@@ -1,11 +1,13 @@
 /*
-    Project: SDC260 3.6 Project - Make It Click (Ndop & Co. online store)
+    Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
     Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
     Date: November 24, 2026 (last updated)
     Purpose: Builds the product cards on the Shop page (and the Featured Products on
              the homepage) from the PRODUCTS array with a loop. Adds the roadmap
              features for this week: keyword search, category filter, and a coupon
              box that updates the card prices on the page.
+             Week 4: each card shows the available stock and an Add to Cart button
+             (js/cart.js); sold-out cards are greyed out and cannot be added.
 */
 
 /* ===== Page elements (some only exist on the Shop page) ===== */
@@ -39,16 +41,25 @@ function productCardHTML(product) {
         couponNote = `<p class="coupon-tag">${activeCoupon.code}: ${activeCoupon.percent}% off</p>`;
     }
 
+    // Stock line and Add to Cart button (stock comes from js/cart.js)
+    const left = availableStock(product.productId);
+    const soldOut = left <= 0;
+    const stockText = soldOut ? "Out of stock" : left <= 3 ? `Only ${left} left` : `${left} in stock`;
+
     return `
-        <article class="product-card">
+        <article class="product-card${soldOut ? " sold-out" : ""}">
             <img src="${product.imageUrl}" alt="${product.imageAlt}">
             <p class="category-label">${product.category}</p>
             <h3>${product.name}</h3>
             <p class="card-text">${product.description}</p>
             <p class="price">${priceHTML}</p>
             ${couponNote}
-            <p class="sku">${product.productId}</p>
-            <a class="btn btn-primary" href="product.html?id=${product.productId}">View Details</a>
+            <p class="sku">${product.productId} <span class="stock-note${soldOut ? " none" : ""}">${stockText}</span></p>
+            <div class="card-actions">
+                <a class="btn btn-secondary" href="product.html?id=${product.productId}">View Details</a>
+                <button type="button" class="btn btn-primary add-to-cart" data-id="${product.productId}"
+                    ${soldOut ? "disabled" : ""} aria-label="Add ${product.name} to cart">${soldOut ? "Out of Stock" : "Add to Cart"}</button>
+            </div>
         </article>
     `;
 }
@@ -143,6 +154,19 @@ if (shopCouponForm) {
         renderShop();
     });
 }
+
+/* ===== Add to Cart buttons (one listener for every card) ===== */
+document.addEventListener("click", event => {
+    const button = event.target.closest(".add-to-cart");
+    if (button && !button.disabled) {
+        addToCart(button.dataset.id, 1);
+        renderShop();
+        renderFeatured();
+    }
+});
+
+// Re-draw if the cart changes in another tab
+document.addEventListener("cartchange", () => { renderShop(); renderFeatured(); });
 
 renderShop();
 renderFeatured();

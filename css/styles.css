@@ -1,5 +1,5 @@
 /*
-    Project: SDC260 3.6 Project - Make It Click (Ndop & Co. online store)
+    Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
     Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
     Date: November 24, 2026 (last updated)
     Purpose: Shared brand stylesheet for every Ndop & Co. page. It defines the Coolors
@@ -876,4 +876,148 @@ summary:focus-visible {
     .contact-layout {
         grid-template-columns: 1fr;
     }
+}
+
+/* =========================================================
+   Week 4: Smart Cart (cart buttons, stock, feedback, tooltip)
+   ========================================================= */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.card-actions .btn {
+    flex: 1 1 120px;
+    text-align: center;
+}
+
+.btn:disabled,
+.btn.disabled {
+    background-color: #9a9a9a;
+    border-color: #9a9a9a;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.stock-note {
+    float: right;
+    color: #2e6b3a;
+    font-weight: bold;
+}
+
+.stock-note.none {
+    color: var(--terracotta);
+}
+
+/* Sold-out cards are greyed out */
+.product-card.sold-out img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.product-card.sold-out h3,
+.product-card.sold-out .card-text,
+.product-card.sold-out .price {
+    color: #8a8a8a;
+}
+
+/* Cursor tooltip for sold-out items */
+.stock-tooltip {
+    position: fixed;
+    z-index: 3000;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: var(--terracotta);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    pointer-events: none;
+    display: none;
+}
+
+.stock-tooltip.show {
+    display: block;
+}
+
+/* Toast message after Add to Cart */
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2500;
+    margin: 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background-color: var(--indigo);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transform: translateY(150%);
+    transition: transform 0.25s ease;
+}
+
+.toast.show {
+    transform: translateY(0);
+}
+
+.toast-error {
+    background-color: var(--terracotta);
+}
+
+/* Header cart count bounces and turns amber when an item is added */
+@keyframes cartBump {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+.nav-list a.cart-bump {
+    display: inline-block;
+    animation: cartBump 0.6s ease;
+    color: var(--gold);
+}
+
+/* Cart page quantity buttons */
+.qty-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--indigo);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--indigo);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.qty-btn:disabled {
+    border-color: #b5b5b5;
+    color: #b5b5b5;
+    cursor: not-allowed;
+}
+
+.link-btn {
+    border: none;
+    background: none;
+    color: var(--terracotta);
+    text-decoration: underline;
+    cursor: pointer;
+    font: inherit;
+}
+
+.qty-btn:focus-visible,
+.link-btn:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.add-form.sold-out input {
+    background-color: #eeeeee;
 }

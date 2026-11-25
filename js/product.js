@@ -1,10 +1,11 @@
 /*
-    Project: SDC260 3.6 Project - Make It Click (Ndop & Co. online store)
+    Project: SDC260 4.7 Project - Smart Cart (Ndop & Co. online store)
     Author: Rodrigue Sifor OUAMBO V MBOLIYOU (Student ID: OU26049981)
     Date: November 24, 2026 (last updated)
     Purpose: Product Detail page. Reads the product id from the address bar
              (product.html?id=NDP-1001), fills the page from js/products.js, and
              builds the "You may also like" cards from the same category.
+             Week 4: the quantity form adds to the real cart and respects stock.
 */
 
 const params = new URLSearchParams(window.location.search);
@@ -22,8 +23,38 @@ document.getElementById("detail-description").textContent = product.description;
 document.getElementById("detail-id").textContent = product.productId;
 document.getElementById("detail-details").textContent = product.details;
 document.getElementById("detail-weight").textContent = `${product.weightOz} oz`;
-document.getElementById("detail-stock").textContent = `In stock (${product.stockQuantity})`;
-document.getElementById("qty").max = product.stockQuantity;
+/* ===== Stock and the Add to Cart form ===== */
+const addForm = document.querySelector(".add-form");
+const qtyInput = document.getElementById("qty");
+const addButton = addForm.querySelector("button");
+
+function showStock() {
+    const left = availableStock(product.productId);
+    document.getElementById("detail-stock").textContent = left > 0 ? `In stock (${left} available)` : "Out of stock";
+    qtyInput.max = Math.max(left, 1);
+    qtyInput.disabled = left <= 0;
+    addButton.disabled = left <= 0;
+    addButton.textContent = left > 0 ? "Add to Cart" : "Out of Stock";
+    addForm.classList.toggle("sold-out", left <= 0);
+}
+
+addForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const wanted = parseInt(qtyInput.value, 10);
+    if (!Number.isInteger(wanted) || wanted < 1) {
+        showToast("Enter a quantity of 1 or more.", true);
+        return;
+    }
+    const added = addToCart(product.productId, wanted);
+    if (added > 0 && added < wanted) {
+        showToast(`Only ${added} were available, so ${added} were added.`);
+    }
+    qtyInput.value = 1;
+    showStock();
+});
+
+document.addEventListener("cartchange", showStock);
+showStock();
 
 const priceBox = document.getElementById("detail-price");
 priceBox.innerHTML = product.salePrice !== null

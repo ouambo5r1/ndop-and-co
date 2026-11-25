@@ -4,7 +4,7 @@
 **Course:** SDC260 Web Development I – HTML, CSS, JS (ECPI University, term 202611E)  
 **Instructor:** Bethany Gottschall  
 **Started:** November 10, 2026  
-**Last updated:** November 24, 2026 (Week 3: Make It Click)
+**Last updated:** November 24, 2026 (Week 4: Smart Cart)
 
 **Repository:** https://github.com/ouambo5r1/ndop-and-co  
 **Live site (GitHub Pages):** https://ouambo5r1.github.io/ndop-and-co/
@@ -49,8 +49,8 @@ WebAIM Contrast Checker: `#222222` on `#FAF6EE` = 14.75:1, `#FFFFFF` on `#B5482A
 |---|---|---|
 | Week 1 (Nov 15, 2026) | Planning and repository; homepage prototype | Complete |
 | Week 2 (Nov 22, 2026) | Static pages and responsive layout | Complete |
-| Week 3 (Nov 29, 2026) | Product data and catalog with JavaScript; contact, shipping, and payment forms with validation; coupon codes | Complete (this milestone) |
-| Week 4 (Dec 6, 2026) | Shopping cart | Not started |
+| Week 3 (Nov 29, 2026) | Product data and catalog with JavaScript; contact, shipping, and payment forms with validation; coupon codes | Complete |
+| Week 4 (Dec 6, 2026) | Shopping cart saved in localStorage, stock tracking with Out of Stock states, checkout from the cart, and a real order confirmation | Complete (this milestone) |
 | Week 5 (Dec 13, 2026) | Checkout, testing, and launch | Not started |
 
 ## Files
@@ -68,13 +68,16 @@ WebAIM Contrast Checker: `#222222` on `#FAF6EE` = 14.75:1, `#FFFFFF` on `#B5482A
 - `js/product.js` – Fills the Product Detail page from `?id=`
 - `js/coupons.js` – Coupon codes and the percentage discount function
 - `js/validation.js` – Validation functions for the contact, shipping, and purchase forms
+- `js/cart.js` – Cart and stock for every page (localStorage), header cart count, Add to Cart feedback, Out of Stock tooltip (Week 4)
+- `js/cart-page.js` – Cart page: quantities, Remove, Clear Cart, totals, Proceed to Checkout (Week 4)
+- `js/confirmation.js` – Order Confirmation page built from the saved order (Week 4)
 - `js/checkout.js` – Checkout order summary, coupon, totals, and form submission
 - `css/styles.css` – Brand palette, shared layout, Flexbox/Grid, and media queries
 - `images/` – Product images used on the catalog, detail, and cart pages
 - `README.md` – this file
 
 This public repository holds the Ndop & Co. website. Course copies of the same
-files are also stored in the private school repository under `sdc260-week2/2.6_NdopAndCo/` and `sdc260-week3/3.6_NdopAndCo/`.
+files are also stored in the private school repository under `sdc260-week2/2.6_NdopAndCo/` `sdc260-week3/3.6_NdopAndCo/`, and `sdc260-week4/4.7_NdopAndCo/`.
 
 ## Coupon codes (Week 3)
 
